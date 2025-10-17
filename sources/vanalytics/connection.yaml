@@ -1,0 +1,7 @@
+# This file was automatically generated
+name: vanalytics
+type: postgres
+options:
+  database: vanalyzer
+  host: 172.27.69.37
+  port: 5433

@@ -1,0 +1,27 @@
+# Evidence build artifacts
+.evidence/template
+.svelte-kit
+build
+.evidence/meta
+
+# Dependencies
+node_modules
+package-lock.json
+
+# Environment and configuration
+.env
+*.options.yaml
+
+# OS and IDE files
+.DS_Store
+.vscode/settings.json
+
+# Data files (users should add their own)
+static/data
+
+# Logs
+logs/
+*.log
+
+# Docker volumes
+docker-data/

@@ -1,0 +1,1 @@
+select * from mitigation_time_view;

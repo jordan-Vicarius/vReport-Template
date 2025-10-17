@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  evidence-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${EVIDENCE_PORT:-8080}:${NGINX_PORT:-80}"
+    container_name: ${CONTAINER_NAME:-evidence-dashboard}
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ:-UTC}
+    volumes:
+      # Mount logs for debugging and monitoring
+      - ./logs:/var/log/nginx:rw
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Security: Run as non-root user
+    user: "1001:1001"
+    # Resource limits for production
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
