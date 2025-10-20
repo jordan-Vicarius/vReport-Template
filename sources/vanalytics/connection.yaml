@@ -1,9 +1,8 @@
-# This file was automatically generated
 name: vanalytics
 type: postgres
 options:
-  database: ${POSTGRES_DATABASE:-vanalyzer}
-  host: ${POSTGRES_HOST:-172.27.69.37}
-  port: ${POSTGRES_PORT:-5433}
-  user: ${POSTGRES_USER}
-  password: ${POSTGRES_PASSWORD}
+  database: ${EVIDENCE_SOURCE__vanalytics__database:-vanalyzer}
+  host: ${EVIDENCE_SOURCE__vanalytics__host:-appdb}
+  port: ${EVIDENCE_SOURCE__vanalytics__port:-5432}
+  user: ${EVIDENCE_SOURCE__vanalytics__user}
+  password: ${EVIDENCE_SOURCE__vanalytics__password}
