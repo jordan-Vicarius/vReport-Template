@@ -25,3 +25,7 @@ logs/
 
 # Docker volumes
 docker-data/
+
+sources/vanalytics/connection.yaml
+sources/vanalytics/connection.options.yaml
+package-lock.json
